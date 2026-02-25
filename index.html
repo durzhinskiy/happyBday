@@ -1,0 +1,1634 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Алина, с днём рождения! 💗</title>
+  <meta name="description" content="Нежный одностраничный сайт-поздравление для Алины: письмо, 26 причин любви, секреты, фото и мини-игра." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Алина, с днём рождения! 💗" />
+  <meta property="og:description" content="Письмо, 26 причин, секреты, фото и мини-игра. С любовью — сегодня и всегда." />
+  <!-- Если хочешь, добавь превью-картинку и раскомментируй:
+  <meta property="og:image" content="https://<your-domain>/assets/og.jpg" />
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg0:#fff7f6;
+      --bg1:#fff1f4;
+      --card:#ffffffcc;
+      --stroke:#ffffffaa;
+      --text:#2b2b33;
+      --muted:#6a6673;
+      --accent:#ff6f9d;
+      --accent2:#ffb199;
+      --gold:#d7b46a;
+      --shadow: 0 16px 48px rgba(20, 10, 30, .10);
+      --shadow2: 0 10px 24px rgba(20, 10, 30, .08);
+      --r-lg: 26px;
+      --r-md: 18px;
+      --r-sm: 14px;
+      --max: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(255,111,157,.18), transparent 60%),
+        radial-gradient(900px 650px at 85% 15%, rgba(215,180,106,.18), transparent 55%),
+        radial-gradient(1100px 800px at 50% 95%, rgba(255,177,153,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg0));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 24px 18px 72px}
+
+    /* Soft floating background hearts */
+    .bg-hearts{
+      position:fixed; inset:0;
+      pointer-events:none;
+      overflow:hidden;
+      z-index:-1;
+      opacity:.9;
+    }
+    .bg-hearts i{
+      position:absolute;
+      width: 18px; height: 18px;
+      transform: rotate(45deg);
+      border-radius: 6px;
+      background: linear-gradient(135deg, rgba(255,111,157,.32), rgba(255,177,153,.20));
+      filter: blur(.2px);
+      animation: floatUp linear infinite;
+    }
+    .bg-hearts i::before,
+    .bg-hearts i::after{
+      content:"";
+      position:absolute;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: inherit;
+    }
+    .bg-hearts i::before{ left:-9px; top:0 }
+    .bg-hearts i::after{ top:-9px; left:0 }
+    @keyframes floatUp{
+      0%{ transform: translateY(110vh) translateX(0) rotate(45deg); opacity:0 }
+      10%{opacity:1}
+      100%{ transform: translateY(-20vh) translateX(var(--drift)) rotate(45deg); opacity:0 }
+    }
+
+    /* Top */
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      padding: 6px 0 10px;
+    }
+    .brand{
+      display:flex; align-items:baseline; gap:10px;
+      user-select:none;
+    }
+    .brand .mark{
+      width:12px;height:12px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,111,157,.55) 35%, rgba(255,177,153,.55) 100%);
+      box-shadow: 0 0 0 6px rgba(255,111,157,.10);
+    }
+    .brand strong{
+      font-family: "Playfair Display", Georgia, serif;
+      letter-spacing:.2px;
+      font-weight:700;
+    }
+    .brand span{ color:var(--muted); font-size:14px }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.55);
+      border:1px solid rgba(255,255,255,.7);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-size: 13px;
+      color: var(--muted);
+      user-select:none;
+      white-space:nowrap;
+    }
+    .pill b{ color:var(--text); font-weight:700 }
+
+    /* Sections */
+    section{ margin-top: 18px; }
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.75);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      overflow:hidden;
+    }
+    .card-inner{ padding: 26px 22px; }
+
+    .hero{
+      position:relative;
+      padding: 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:stretch;
+    }
+    @media (max-width: 880px){
+      .hero-grid{ grid-template-columns:1fr; }
+    }
+
+    .hero h1{
+      margin: 6px 0 10px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(34px, 4.2vw, 56px);
+      line-height: 1.05;
+      letter-spacing: .2px;
+    }
+    .hero p.lead{
+      margin: 0 0 18px;
+      font-size: 16.5px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 62ch;
+    }
+
+    .hero-badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(255,255,255,.75);
+      box-shadow: var(--shadow2);
+      margin: 6px 0 14px;
+    }
+    .hero-badge .dot{
+      width:10px;height:10px;border-radius:99px;
+      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,111,157,.75));
+      box-shadow: 0 0 0 5px rgba(255,111,157,.10);
+    }
+    .hero-badge b{ font-weight:800 }
+    .hero-badge span{ color:var(--muted) }
+
+    .count{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .count .tile{
+      padding: 14px 12px;
+      border-radius: var(--r-md);
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(255,255,255,.8);
+      box-shadow: var(--shadow2);
+      text-align:center;
+    }
+    .count .num{
+      font-size: clamp(20px, 2.8vw, 28px);
+      font-weight: 800;
+      letter-spacing:.2px;
+    }
+    .count .lbl{
+      margin-top:4px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .actions{
+      display:flex; flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 16px;
+      align-items:center;
+    }
+    .btn{
+      appearance:none;
+      border:0;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      user-select:none;
+    }
+    .btn:active{ transform: translateY(1px) }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      box-shadow: 0 14px 26px rgba(255,111,157,.28);
+    }
+    .btn-primary:hover{ box-shadow: 0 18px 34px rgba(255,111,157,.32) }
+    .btn-ghost{
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(255,255,255,.85);
+      color: var(--text);
+      box-shadow: var(--shadow2);
+      font-weight: 750;
+    }
+    .btn-ghost:hover{ box-shadow: 0 16px 28px rgba(20,10,30,.10) }
+
+    .hero-side{
+      position:relative;
+      min-height: 260px;
+    }
+    .hero-side .frame{
+      height:100%;
+      border-radius: var(--r-lg);
+      background:
+        radial-gradient(140px 120px at 30% 35%, rgba(255,111,157,.24), transparent 60%),
+        radial-gradient(220px 160px at 70% 20%, rgba(215,180,106,.22), transparent 55%),
+        radial-gradient(260px 200px at 50% 80%, rgba(255,177,153,.22), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.35));
+      border: 1px solid rgba(255,255,255,.80);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+    }
+    .hero-side .quote{
+      text-align:center;
+      max-width: 30ch;
+    }
+    .hero-side .quote h3{
+      margin:0 0 8px;
+      font-family:"Playfair Display", Georgia, serif;
+      font-size: 22px;
+      letter-spacing:.2px;
+    }
+    .hero-side .quote p{
+      margin:0;
+      color: var(--muted);
+      line-height:1.55;
+      font-size: 14.5px;
+    }
+    .hero-side .ribbon{
+      position:absolute;
+      left:-60px; top:18px;
+      transform: rotate(-10deg);
+      background: rgba(255,255,255,.55);
+      border:1px solid rgba(255,255,255,.7);
+      box-shadow: var(--shadow2);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      color: var(--text);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Title blocks */
+    .title{
+      display:flex; align-items:baseline; justify-content:space-between;
+      gap: 16px;
+      padding: 6px 4px 14px;
+    }
+    .title h2{
+      margin:0;
+      font-family:"Playfair Display", Georgia, serif;
+      font-size: clamp(22px, 2.4vw, 30px);
+      letter-spacing:.2px;
+    }
+    .title p{
+      margin:0;
+      color:var(--muted);
+      font-size: 13.5px;
+    }
+
+    /* Letter */
+    .letter{
+      position:relative;
+    }
+    .letter .paper{
+      border-radius: var(--r-lg);
+      padding: 24px 22px;
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(255,255,255,.82);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .letter .paper::before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:
+        radial-gradient(240px 180px at 10% 15%, rgba(255,111,157,.18), transparent 60%),
+        radial-gradient(250px 180px at 90% 20%, rgba(215,180,106,.16), transparent 55%),
+        radial-gradient(300px 220px at 50% 95%, rgba(255,177,153,.16), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .letter .paper > *{ position:relative }
+    .letter .txt{
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.85;
+      color: #2a2730;
+      white-space: pre-wrap;
+    }
+    .letter .sign{
+      margin-top: 16px;
+      font-weight: 800;
+      letter-spacing:.2px;
+    }
+    .type-controls{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+      margin-top: 14px;
+    }
+    .mini{
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Reasons */
+    .reasons-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+    }
+    @media (max-width: 920px){ .reasons-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    @media (max-width: 560px){ .reasons-grid{ grid-template-columns: 1fr; } }
+
+    .reason{
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(255,255,255,.82);
+      border-radius: var(--r-md);
+      padding: 14px 14px;
+      box-shadow: var(--shadow2);
+      min-height: 78px;
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+    }
+    .reason .n{
+      width: 34px; height: 34px;
+      border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(255,111,157,.95), rgba(255,177,153,.95));
+      box-shadow: 0 10px 18px rgba(255,111,157,.22);
+      flex: 0 0 auto;
+    }
+    .reason p{
+      margin: 0;
+      color: #2b2b33;
+      line-height: 1.55;
+      font-size: 14.5px;
+    }
+
+    /* Accordion */
+    .accordion{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+    }
+    @media (max-width: 860px){ .accordion{ grid-template-columns: 1fr; } }
+    .acc{
+      border-radius: var(--r-md);
+      border: 1px solid rgba(255,255,255,.82);
+      background: rgba(255,255,255,.72);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .acc button{
+      width:100%;
+      text-align:left;
+      background:transparent;
+      border:0;
+      padding: 14px 14px;
+      cursor:pointer;
+      display:flex;
+      gap: 12px;
+      align-items:center;
+      justify-content:space-between;
+      font-family: inherit;
+    }
+    .acc .left{
+      display:flex; flex-direction:column; gap:4px;
+    }
+    .acc .t{
+      font-weight: 900;
+      letter-spacing:.2px;
+    }
+    .acc .h{
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.35;
+    }
+    .chev{
+      width: 32px; height: 32px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.70);
+      border:1px solid rgba(255,255,255,.85);
+      box-shadow: 0 10px 16px rgba(20,10,30,.06);
+      display:flex; align-items:center; justify-content:center;
+      transition: transform .18s ease;
+      flex: 0 0 auto;
+    }
+    .acc[aria-expanded="true"] .chev{ transform: rotate(180deg) }
+    .panel{
+      max-height:0;
+      overflow:hidden;
+      transition: max-height .28s ease;
+      border-top: 1px solid rgba(255,255,255,.60);
+    }
+    .panel .inner{
+      padding: 12px 14px 16px;
+      color: #2b2b33;
+      line-height: 1.65;
+      font-size: 14.5px;
+    }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 10px;
+    }
+    @media (max-width: 920px){ .gallery{ grid-template-columns: repeat(3, minmax(0,1fr)); } }
+    @media (max-width: 620px){ .gallery{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+
+    .ph{
+      position:relative;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.82);
+      background:
+        radial-gradient(120px 90px at 20% 20%, rgba(255,111,157,.20), transparent 60%),
+        radial-gradient(160px 120px at 80% 30%, rgba(215,180,106,.18), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.35));
+      box-shadow: var(--shadow2);
+      aspect-ratio: 1 / 1;
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+      user-select:none;
+    }
+    .ph:hover{ transform: translateY(-1px); box-shadow: 0 16px 30px rgba(20,10,30,.10) }
+    .ph img{
+      width:100%; height:100%;
+      object-fit: cover;
+      display:block;
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+    .ph.loaded img{ opacity:1 }
+    .ph .cap{
+      position:absolute; left:10px; right:10px; bottom:10px;
+      font-size: 12px;
+      color: rgba(255,255,255,.95);
+      padding: 8px 10px;
+      border-radius: 14px;
+      background: rgba(20,10,30,.20);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.25);
+      display:none;
+    }
+    .ph.placeholder .cap{
+      display:block;
+      color: rgba(60,45,70,.85);
+      background: rgba(255,255,255,.65);
+      border: 1px dashed rgba(255,111,157,.35);
+    }
+
+    /* Lightbox */
+    .modal{
+      position:fixed; inset:0;
+      display:none;
+      place-items:center;
+      background: rgba(12, 8, 16, .55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 50;
+      padding: 16px;
+    }
+    .modal.open{ display:grid; }
+    .modal .box{
+      width:min(980px, 100%);
+      border-radius: 22px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,255,255,.85);
+      box-shadow: 0 24px 80px rgba(0,0,0,.25);
+      overflow:hidden;
+      position:relative;
+    }
+    .modal .top{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 10px;
+      padding: 12px 12px;
+      border-bottom: 1px solid rgba(30,20,45,.08);
+      background: rgba(255,255,255,.65);
+    }
+    .modal .top .mcap{
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .iconbtn{
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      border: 1px solid rgba(30,20,45,.10);
+      background: rgba(255,255,255,.75);
+      cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 10px 18px rgba(20,10,30,.08);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .iconbtn:hover{ box-shadow: 0 14px 24px rgba(20,10,30,.10) }
+    .iconbtn:active{ transform: translateY(1px) }
+
+    .modal .imgwrap{
+      background: linear-gradient(135deg, rgba(255,111,157,.10), rgba(255,177,153,.08));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height: min(70vh, 640px);
+    }
+    .modal img{
+      max-width:100%;
+      max-height: 75vh;
+      display:block;
+    }
+    .modal .nav{
+      position:absolute;
+      inset: 0;
+      pointer-events:none;
+    }
+    .modal .nav .prev,
+    .modal .nav .next{
+      position:absolute; top: 50%;
+      transform: translateY(-50%);
+      pointer-events:auto;
+    }
+    .modal .nav .prev{ left: 12px; }
+    .modal .nav .next{ right: 12px; }
+
+    /* Hug */
+    .hug-row{
+      display:flex; flex-wrap:wrap; gap: 12px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .hug-note{
+      color: var(--muted);
+      line-height:1.55;
+      max-width: 60ch;
+      margin: 0;
+    }
+    .hug-result{
+      margin-top: 12px;
+      display:none;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.85);
+      box-shadow: var(--shadow2);
+      color: #2b2b33;
+      font-weight: 750;
+    }
+    .hug-result.show{ display:block; }
+
+    /* Mini game */
+    .game{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .game-top{
+      display:flex; flex-wrap:wrap; gap: 10px;
+      align-items:center; justify-content:space-between;
+    }
+    .stats{
+      display:flex; flex-wrap:wrap; gap: 10px;
+      align-items:center;
+    }
+    .stat{
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(255,255,255,.85);
+      box-shadow: var(--shadow2);
+      font-weight: 800;
+      color: #2b2b33;
+      font-size: 13px;
+    }
+    .stat span{ color: var(--muted); font-weight: 650; margin-left:6px }
+    .gamefield{
+      position:relative;
+      height: 360px;
+      border-radius: var(--r-lg);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.82);
+      background:
+        radial-gradient(220px 160px at 20% 30%, rgba(255,111,157,.18), transparent 60%),
+        radial-gradient(240px 180px at 85% 25%, rgba(215,180,106,.16), transparent 60%),
+        radial-gradient(300px 220px at 60% 90%, rgba(255,177,153,.16), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.35));
+      box-shadow: var(--shadow);
+      touch-action: manipulation;
+      user-select:none;
+    }
+    .gamefield .hint{
+      position:absolute; inset:0;
+      display:grid; place-items:center;
+      text-align:center;
+      padding: 16px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 650;
+    }
+    .heart{
+      position:absolute;
+      width: 34px; height: 34px;
+      transform: rotate(45deg);
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(255,111,157,.95), rgba(255,177,153,.95));
+      box-shadow: 0 14px 26px rgba(255,111,157,.25);
+      cursor:pointer;
+      will-change: transform, top, left;
+      animation: popIn .12s ease-out;
+    }
+    .heart::before, .heart::after{
+      content:"";
+      position:absolute;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: inherit;
+    }
+    .heart::before{ left:-17px; top:0 }
+    .heart::after{ top:-17px; left:0 }
+    @keyframes popIn{
+      from{ transform: rotate(45deg) scale(.85); opacity:.75 }
+      to{ transform: rotate(45deg) scale(1); opacity:1 }
+    }
+    .heart.burst{
+      animation: burst .18s ease-out forwards;
+    }
+    @keyframes burst{
+      to{ transform: rotate(45deg) scale(1.35); opacity:0 }
+    }
+    .game-end{
+      display:none;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.85);
+      box-shadow: var(--shadow2);
+      color: #2b2b33;
+      line-height:1.55;
+    }
+    .game-end.show{ display:block; }
+
+    footer{
+      margin-top: 22px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 13.5px;
+      padding: 14px 6px;
+    }
+    .date{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.62);
+      border: 1px solid rgba(255,255,255,.82);
+      box-shadow: var(--shadow2);
+    }
+
+    /* reveal on scroll */
+    .reveal{ opacity:0; transform: translateY(10px); transition: opacity .45s ease, transform .45s ease; }
+    .reveal.in{ opacity:1; transform: translateY(0); }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior:auto !important; }
+      .bg-hearts i{ animation:none !important; opacity:.15 }
+      .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+      .heart{ animation:none !important; }
+      .heart.burst{ animation:none !important; opacity:0 !important; }
+      .panel{ transition:none !important; }
+      .btn{ transition:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-hearts" aria-hidden="true" id="bgHearts"></div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <strong>Для Алинки-любимки</strong>
+        <span></span>
+      </div>
+      <div class="pill" title="Счётчик обновляется в реальном времени">
+        💞 <span>Мы вместе уже:</span> <b id="togetherShort">—</b>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="card hero reveal" id="top">
+      <div class="card-inner">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <b>26.02.2026</b>
+                <span>— твой день</span>
+              </div>
+            </div>
+
+            <h1>Алиночка, с днём рождения! 💗</h1>
+            <p class="lead">
+              Пусть этот день будет тёплым, мягким и красивым — как ты.
+              А ещё пусть он напомнит тебе самое главное: ты невероятно красивая, любимая и желанная!
+            </p>
+
+            <div class="count" aria-label="Счётчик времени вместе">
+              <div class="tile"><div class="num" id="d">—</div><div class="lbl">дней</div></div>
+              <div class="tile"><div class="num" id="h">—</div><div class="lbl">часов</div></div>
+              <div class="tile"><div class="num" id="m">—</div><div class="lbl">минут</div></div>
+              <div class="tile"><div class="num" id="s">—</div><div class="lbl">секунд</div></div>
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-primary" id="toLetter">Открыть письмо</button>
+              <button class="btn btn-ghost" id="toGame">Поиграть 💞</button>
+              <button class="btn btn-ghost" id="toPhotos">Наши фото</button>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="ribbon"> Ты. Мой. Идеал.</div>
+            <div class="frame">
+              <div class="quote">
+                <h3>С ДНЕМ РОЖДЕНИЯ!!!</h3>
+                <p>
+                  Я создал это специально для тебя, чтобы напомнить
+                   — ты мой самый главный выбор в жизни!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LETTER -->
+    <section class="reveal" id="letter">
+      <div class="title">
+        <div>
+          <h2>Письмо</h2>
+          <p>Для моей красавицы. Чисто от души душевно в душу!</p>
+        </div>
+        <div class="pill">💌 <b>FOR YOU</b></div>
+      </div>
+
+      <div class="card letter">
+        <div class="card-inner">
+          <div class="paper">
+            <p class="txt" id="letterText" aria-live="polite"></p>
+
+            <div class="type-controls">
+              <button class="btn btn-primary" id="toggleTyping">Показать полностью</button>
+              <span class="mini" id="typingHint">Текст появляется мягко — но можно открыть сразу.</span>
+            </div>
+
+            <div class="sign">Твой Mr.Durzhinskiy</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 26 REASONS -->
+    <section class="reveal" id="reasons">
+      <div class="title">
+        <div>
+          <h2>26 причин, почему я люблю тебя</h2>
+        </div>
+        <div class="pill">💗 <b>26</b> маленьких комплиментов</div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="reasons-grid" id="reasonsGrid" aria-label="Список причин"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECRETS / NOTES -->
+    <section class="reveal" id="notes">
+      <div class="title">
+        <div>
+          <h2>5 маленьких секретов</h2>
+          <p>Нажми — и открой записку.</p>
+        </div>
+        <div class="pill">🔐 <b>только для тебя</b></div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="accordion" id="accordion"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTOS -->
+    <section class="reveal" id="photos">
+      <div class="title">
+        <div>
+          <h2>Наши моменты</h2>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="gallery" id="gallery" aria-label="Галерея фотографий"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HUG -->
+    <section class="reveal" id="hug">
+      <div class="title">
+        <div>
+          <h2>ОБМНИМАШКИ</h2>
+          <p>Один клик — и немного тепла.</p>
+        </div>
+        <div class="pill">🤍 <b>Я ТЕБЯ ЛЮБЛЮ</b></div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="hug-row">
+            <p class="hug-note">
+              Когда сложно, когда радостно, когда просто хочется тишины — я рядом.
+              Люблю тебя обнимать и  твои обнимашки. 
+            </p>
+            <button class="btn btn-primary" id="hugBtn">Обнять Алину</button>
+          </div>
+          <div class="hug-result" id="hugResult">Я рядом. Всегда.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section class="reveal" id="game">
+      <div class="title">
+        <div>
+          <h2>Мини-игра: “Поймай сердечки”</h2>
+          <p>Собери как можно больше любви за 30 секунд.</p>
+        </div>
+        <div class="pill">🎮 <b>тап/клик</b></div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner game">
+          <div class="game-top">
+            <div class="stats">
+              <div class="stat">Очки: <span id="score">0</span></div>
+              <div class="stat">Время: <span id="time">30</span>с</div>
+              <div class="stat">Лучший: <span id="best">0</span></div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary" id="startGame">Старт</button>
+              <button class="btn btn-ghost" id="restartGame" disabled>Сыграть ещё</button>
+            </div>
+          </div>
+
+          <div class="gamefield" id="field" aria-label="Игровое поле">
+            <div class="hint" id="gameHint">
+              Нажми <b>Старт</b> — сердечки начнут падать.<br/>
+              Лови их кликом (или тапом) 💗
+            </div>
+          </div>
+
+          <div class="game-end" id="gameEnd"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="date">💞 <span>С любовью, сегодня и всегда</span> · <b>26.02.2026</b></div>
+      <div style="margin-top:10px;">Пусть у тебя будет больше тепла, чем поводов грустить — и больше счастья, чем ты успеешь сосчитать.</div>
+    </footer>
+  </div>
+
+  <!-- Lightbox modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Просмотр фото" aria-hidden="true">
+    <div class="box" role="document">
+      <div class="top">
+        <div class="mcap" id="modalCap">Фото</div>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <button class="iconbtn" id="prevBtn" aria-label="Предыдущее фото">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14.5 5L7.5 12L14.5 19" stroke="#2b2b33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="iconbtn" id="nextBtn" aria-label="Следующее фото">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9.5 5L16.5 12L9.5 19" stroke="#2b2b33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="iconbtn" id="closeBtn" aria-label="Закрыть">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 6L18 18M18 6L6 18" stroke="#2b2b33" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="imgwrap">
+        <img id="modalImg" alt="Фото" />
+      </div>
+
+      <div class="nav" aria-hidden="true">
+        <button class="iconbtn prev" id="prevBtn2" aria-label="Предыдущее фото (дублирующая кнопка)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M14.5 5L7.5 12L14.5 19" stroke="#2b2b33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="iconbtn next" id="nextBtn2" aria-label="Следующее фото (дублирующая кнопка)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M9.5 5L16.5 12L9.5 19" stroke="#2b2b33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================
+    // Helpers
+    // =========================
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+    const pad2 = (n) => String(n).padStart(2,"0");
+
+    // Respect reduced motion
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // =========================
+    // Background hearts (light)
+    // =========================
+    (function initBgHearts(){
+      const box = $("#bgHearts");
+      if(!box) return;
+
+      const count = reduceMotion ? 10 : 22;
+      const w = window.innerWidth;
+      for(let i=0;i<count;i++){
+        const el = document.createElement("i");
+        const left = Math.random()*100;
+        const size = 12 + Math.random()*18;
+        const dur = 12 + Math.random()*16;
+        const delay = Math.random()*-dur;
+        const drift = (Math.random()*140 - 70).toFixed(0) + "px";
+        el.style.left = left + "vw";
+        el.style.width = size + "px";
+        el.style.height = size + "px";
+        el.style.setProperty("--drift", drift);
+        el.style.animationDuration = dur + "s";
+        el.style.animationDelay = delay + "s";
+        el.style.opacity = (0.22 + Math.random()*0.25).toFixed(2);
+        box.appendChild(el);
+      }
+    })();
+
+    // =========================
+    // Together counter
+    // =========================
+    const togetherFrom = new Date("2024-08-26T00:00:00"); // local time
+    function updateTogether(){
+      const now = new Date();
+      let diff = Math.max(0, now - togetherFrom);
+
+      const days = Math.floor(diff / (1000*60*60*24));
+      diff -= days * (1000*60*60*24);
+      const hours = Math.floor(diff / (1000*60*60));
+      diff -= hours * (1000*60*60);
+      const mins = Math.floor(diff / (1000*60));
+      diff -= mins * (1000*60);
+      const secs = Math.floor(diff / 1000);
+
+      $("#d").textContent = days;
+      $("#h").textContent = pad2(hours);
+      $("#m").textContent = pad2(mins);
+      $("#s").textContent = pad2(secs);
+
+      $("#togetherShort").textContent = `${days}д ${pad2(hours)}:${pad2(mins)}:${pad2(secs)}`;
+    }
+    updateTogether();
+    setInterval(updateTogether, 1000);
+
+    // Smooth scroll buttons
+    $("#toLetter").addEventListener("click", () => $("#letter").scrollIntoView({behavior:"smooth", block:"start"}));
+    $("#toGame").addEventListener("click", () => $("#game").scrollIntoView({behavior:"smooth", block:"start"}));
+    $("#toPhotos").addEventListener("click", () => $("#photos").scrollIntoView({behavior:"smooth", block:"start"}));
+
+    // =========================
+    // Letter with optional typing
+    // =========================
+    const fullLetter =
+`Любимая,
+
+с днём рождения. Сегодня мне хочется сказать тебе не “в целом”, а по-настоящему — так, чтобы ты почувствовала: тебя видят, тебя ценят и тебя любят.
+
+Ты умеешь делать мир мягче. Даже когда вокруг шум, спешка и много дел — рядом с тобой появляется ощущение, что всё на своём месте. Ты не обязана быть идеальной, сильной каждую минуту или “успевать всё”. Ты уже достаточно. Ты — настоящая. И этим ты бесконечно красива.
+
+Мне нравится, как ты умеешь радоваться мелочам и как бережно относишься к важному. Как в тебе сочетаются нежность и характер. Как ты можешь быть лёгкой — и одновременно невероятно глубокой. С тобой хочется быть лучше не из-за “надо”, а потому что рядом с тобой хочется беречь, заботиться, поддерживать и создавать что-то светлое.
+
+Я хочу, чтобы этот год принёс тебе больше спокойствия внутри, больше тёплых совпадений, больше “вот оно!” и меньше сомнений. Чтобы рядом были люди и события, которые выбирают тебя так же искренне, как я выбираю.
+
+И ещё — я хочу, чтобы ты помнила: ты можешь опираться на меня. В радости, в усталости, в тишине, в планах и в мечтах. Я не обещаю идеальную сказку — я обещаю быть рядом. Слушать. Держать за руку. Улыбаться вместе. И любить тебя так, как ты этого заслуживаешь: нежно, внимательно и по-настоящему.
+
+С днём рождения, моя любимая. Пусть у тебя будет много поводов улыбаться — ведь я так люблю твою улыбку!`;
+
+    const letterEl = $("#letterText");
+    const typingBtn = $("#toggleTyping");
+    const typingHint = $("#typingHint");
+
+    let typingOn = !reduceMotion; // disable typing on reduced motion by default
+    let typingTimer = null;
+    let typedIndex = 0;
+    let typingDone = false;
+
+    function renderLetterInstant(){
+      clearInterval(typingTimer);
+      letterEl.textContent = fullLetter;
+      typedIndex = fullLetter.length;
+      typingDone = true;
+      typingBtn.textContent = "Показать с печатью";
+      typingHint.textContent = "Можно включить мягкую печать заново.";
+    }
+
+    function startTyping(){
+      clearInterval(typingTimer);
+      letterEl.textContent = "";
+      typedIndex = 0;
+      typingDone = false;
+      typingBtn.textContent = "Показать полностью";
+      typingHint.textContent = "Текст появляется мягко — но можно открыть сразу.";
+
+      const speed = 14; // ms per char tick base
+      typingTimer = setInterval(() => {
+        // Add 2–4 chars per tick for smoother speed
+        const step = 2 + Math.floor(Math.random()*3);
+        typedIndex = Math.min(fullLetter.length, typedIndex + step);
+        letterEl.textContent = fullLetter.slice(0, typedIndex);
+
+        if(typedIndex >= fullLetter.length){
+          clearInterval(typingTimer);
+          typingDone = true;
+          typingBtn.textContent = "Показать с печатью";
+          typingHint.textContent = "Готово. Если хочешь — можно “напечатать” снова.";
+        }
+      }, speed);
+    }
+
+    // Initial
+    if(typingOn) startTyping(); else renderLetterInstant();
+
+    typingBtn.addEventListener("click", () => {
+      if(!typingDone){
+        renderLetterInstant();
+      } else {
+        // restart typing
+        typingOn = true;
+        startTyping();
+      }
+    });
+
+    // =========================
+    // Reasons (26)
+    // =========================
+    const reasons = [
+      "За то, что рядом с тобой мир становится тише и добрее — будто кто-то убавил громкость суеты.",
+      "За твою улыбку, которая умеет возвращать меня “домой” даже в самый обычный день.",
+      "За то, как ты умеешь быть нежной",
+      "За твои красивые глаза",
+      "За твою искренность",
+      "За то, как ты умеешь заботиться",
+      "За твой смех — он делает любые стены мягче, а воздух легче.",
+      "За то, что ты умеешь вдохновлять",
+      "За твою женственность",
+      "За твой характер: ты умеешь говорить “нет” и при этом оставаться душкой.",
+      "За твою внимательность к мелочам, из которых и складывается настоящая близость.",
+      "За то, как красиво ты умеешь радоваться",
+      "За твою смелость быть собой, даже когда проще было бы спрятаться.",
+      "За твою заботу о мире вокруг — она чувствуется в каждом твоём действии.",
+      "За твои глаза утром — когда ещё всё впереди, и ты особенно настоящая.",
+      "За то, что ты умеешь превращать “просто вечер” в блокбастер уровня  Netflix",
+      "За твою нежность в прикосновениях.",
+      "За то, как ты умеешь слушать",
+      "За твою доброту",
+      "За твою красоту — и внешнюю и внутреннюю.",
+      "За то, что ты умеешь верить в хорошее — и этим учишь меня тоже.",
+      "За твой уют: рядом с тобой хочется строить, беречь и возвращаться.",
+      "За то, что с тобой хочется быть лучше",
+      "За тебя колым отдам",
+      "За твою сексуальность, даже когда просто ешь мороженное",
+      "За то, что ты — мой выбор. Каждый день. Снова и снова."
+    ];
+
+    const reasonsGrid = $("#reasonsGrid");
+    reasons.forEach((text, idx) => {
+      const item = document.createElement("div");
+      item.className = "reason";
+      item.innerHTML = `<div class="n">${idx+1}</div><p>${text}</p>`;
+      reasonsGrid.appendChild(item);
+    });
+
+    // =========================
+    // Accordion notes (5)
+    // =========================
+    const notes = [
+      {
+        title: "Секрет №1",
+        hint: "Про то, что я думаю чаще, чем говорю…",
+        body: "Иногда я просто смотрю на тебя и ловлю себя на мысли: “Вот оно. Это то самое.” "
+      },
+      {
+        title: "Секрет №2",
+        hint: "Про поддержку без лишних слов…",
+        body: "Если у тебя будет тяжёлый день — не обязательно объяснять всё подробно. Можно просто вместе сожрать ведро мороженного"
+      },
+      {
+        title: "Секрет №3",
+        hint: "Про будущее, которое хочется строить…",
+        body: "Мне нравится думать о “нас” не как о моменте, а как о пути. О маленьких привычках, планах, поездках, доме в голове и в сердце."
+      },
+      {
+        title: "Секрет №4",
+        hint: "Про нежность, которая сильнее суеты…",
+        body: "Я люблю в тебе не только яркое — я люблю твои тихие стороны: мягкость, задумчивость, твою глубину и твою тёплую честность."
+      },
+      {
+        title: "Секрет №5",
+        hint: "Про “я рядом” — всегда…",
+        body: "Я не обещаю идеальных дней. Я обещаю быть человеком, на которого можно опереться: держать, беречь, уважать и любить тебя по-настоящему."
+      }
+    ];
+
+    const accRoot = $("#accordion");
+    notes.forEach((n, i) => {
+      const acc = document.createElement("div");
+      acc.className = "acc";
+      acc.setAttribute("aria-expanded", "false");
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.setAttribute("aria-controls", `panel-${i}`);
+      btn.setAttribute("id", `acc-${i}`);
+      btn.innerHTML = `
+        <div class="left">
+          <div class="t">${n.title}</div>
+          <div class="h">${n.hint}</div>
+        </div>
+        <div class="chev" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M6 9L12 15L18 9" stroke="#2b2b33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      `;
+
+      const panel = document.createElement("div");
+      panel.className = "panel";
+      panel.id = `panel-${i}`;
+      panel.setAttribute("role", "region");
+      panel.setAttribute("aria-labelledby", `acc-${i}`);
+      panel.innerHTML = `<div class="inner">${n.body}</div>`;
+
+      const toggle = () => {
+        const expanded = acc.getAttribute("aria-expanded") === "true";
+        acc.setAttribute("aria-expanded", String(!expanded));
+        if(!expanded){
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } else {
+          panel.style.maxHeight = "0px";
+        }
+      };
+
+      btn.addEventListener("click", toggle);
+      btn.addEventListener("keydown", (e) => {
+        if(e.key === "Enter" || e.key === " "){
+          e.preventDefault();
+          toggle();
+        }
+      });
+
+      acc.appendChild(btn);
+      acc.appendChild(panel);
+      accRoot.appendChild(acc);
+    });
+
+    // Make panels correct on resize (if open)
+    window.addEventListener("resize", () => {
+      $$(".acc").forEach(acc => {
+        const expanded = acc.getAttribute("aria-expanded")==="true";
+        const panel = $(".panel", acc);
+        if(expanded) panel.style.maxHeight = panel.scrollHeight + "px";
+      });
+    });
+
+    // =========================
+    // Gallery with graceful fallback
+    // =========================
+    const gallery = $("#gallery");
+    const photos = Array.from({length:12}, (_,i)=> {
+      const n = String(i+1).padStart(2,"0");
+      return {
+        src: `assets/photo${n}.jpg`,
+        alt: `Наше фото ${i+1}`,
+        cap: `Фото ${i+1}`
+      };
+    });
+
+    let currentIndex = 0;
+    const modal = $("#modal");
+    const modalImg = $("#modalImg");
+    const modalCap = $("#modalCap");
+
+    function openModal(idx){
+      currentIndex = idx;
+      const p = photos[currentIndex];
+      modalImg.src = p.src;
+      modalImg.alt = p.alt;
+      modalCap.textContent = `${p.cap} · ${currentIndex+1} / ${photos.length}`;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      // focus for accessibility
+      $("#closeBtn").focus();
+    }
+
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      modalImg.src = "";
+    }
+
+    function nav(dir){
+      currentIndex = (currentIndex + dir + photos.length) % photos.length;
+      const p = photos[currentIndex];
+      modalImg.src = p.src;
+      modalImg.alt = p.alt;
+      modalCap.textContent = `${p.cap} · ${currentIndex+1} / ${photos.length}`;
+    }
+
+    function buildGallery(){
+      photos.forEach((p, idx) => {
+        const cell = document.createElement("div");
+        cell.className = "ph";
+        cell.setAttribute("role","button");
+        cell.setAttribute("tabindex","0");
+        cell.setAttribute("aria-label", `Открыть ${p.alt}`);
+
+        const img = document.createElement("img");
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.alt = p.alt;
+        img.src = p.src;
+
+        const cap = document.createElement("div");
+        cap.className = "cap";
+        cap.textContent = p.cap;
+
+        img.addEventListener("load", () => {
+          cell.classList.add("loaded");
+          cell.classList.remove("placeholder");
+          cap.style.display = "none";
+        });
+
+        img.addEventListener("error", () => {
+          cell.classList.add("placeholder");
+          cap.style.display = "block";
+          cap.textContent = "Добавь фото в assets/ (photo01.jpg … photo12.jpg)";
+        });
+
+        const open = () => openModal(idx);
+        cell.addEventListener("click", open);
+        cell.addEventListener("keydown", (e) => {
+          if(e.key === "Enter" || e.key === " "){
+            e.preventDefault();
+            open();
+          }
+        });
+
+        cell.appendChild(img);
+        cell.appendChild(cap);
+        gallery.appendChild(cell);
+      });
+    }
+    buildGallery();
+
+    // Modal events
+    $("#closeBtn").addEventListener("click", closeModal);
+    $("#prevBtn").addEventListener("click", () => nav(-1));
+    $("#nextBtn").addEventListener("click", () => nav(1));
+    $("#prevBtn2").addEventListener("click", () => nav(-1));
+    $("#nextBtn2").addEventListener("click", () => nav(1));
+
+    modal.addEventListener("click", (e) => {
+      if(e.target === modal) closeModal();
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if(!modal.classList.contains("open")) return;
+      if(e.key === "Escape") closeModal();
+      if(e.key === "ArrowLeft") nav(-1);
+      if(e.key === "ArrowRight") nav(1);
+    });
+
+    // =========================
+    // Hug: hearts burst (light)
+    // =========================
+    const hugBtn = $("#hugBtn");
+    const hugResult = $("#hugResult");
+
+    function spawnHeartsBurst(x, y, count=18){
+      const root = document.body;
+      for(let i=0;i<count;i++){
+        const el = document.createElement("div");
+        el.className = "heart";
+        el.style.position = "fixed";
+        el.style.left = (x + (Math.random()*20-10)) + "px";
+        el.style.top = (y + (Math.random()*20-10)) + "px";
+        const scale = 0.6 + Math.random()*0.7;
+        el.style.transform = `rotate(45deg) scale(${scale})`;
+        el.style.opacity = "1";
+        el.style.pointerEvents = "none";
+        el.style.zIndex = 60;
+
+        root.appendChild(el);
+
+        const vx = (Math.random()*2-1) * (70 + Math.random()*90);
+        const vy = -(120 + Math.random()*140);
+        const rot = (Math.random()*40 - 20);
+        const life = 700 + Math.random()*450;
+
+        const start = performance.now();
+        const sx = x, sy = y;
+
+        const tick = (t) => {
+          const p = Math.min(1, (t - start)/life);
+          // ease out
+          const eout = 1 - Math.pow(1-p, 3);
+          const nx = sx + vx * eout;
+          const ny = sy + vy * eout + (p*p)*200; // gravity
+          const a = 1 - p;
+          el.style.left = nx + "px";
+          el.style.top = ny + "px";
+          el.style.opacity = a.toFixed(2);
+          el.style.transform = `rotate(${45+rot*eout}deg) scale(${scale*(1+0.15*eout)})`;
+          if(p < 1){
+            requestAnimationFrame(tick);
+          } else {
+            el.remove();
+          }
+        };
+        if(!reduceMotion) requestAnimationFrame(tick);
+        else el.remove();
+      }
+    }
+
+    hugBtn.addEventListener("click", (e) => {
+      const r = hugBtn.getBoundingClientRect();
+      const x = r.left + r.width/2;
+      const y = r.top + r.height/2;
+      spawnHeartsBurst(x, y, reduceMotion ? 0 : 20);
+      hugResult.classList.add("show");
+      hugResult.textContent = "Я рядом. Всегда.";
+      setTimeout(() => hugResult.classList.remove("show"), 4200);
+    });
+
+    // =========================
+    // Mini game: catch hearts
+    // =========================
+    const field = $("#field");
+    const hint = $("#gameHint");
+    const scoreEl = $("#score");
+    const timeEl = $("#time");
+    const bestEl = $("#best");
+    const endEl = $("#gameEnd");
+    const startBtn = $("#startGame");
+    const restartBtn = $("#restartGame");
+
+    const BEST_KEY = "alina_hearts_best_v1";
+    let best = Number(localStorage.getItem(BEST_KEY) || 0);
+    bestEl.textContent = best;
+
+    let playing = false;
+    let score = 0;
+    let timeLeft = 30;
+    let spawnTimer = null;
+    let gameTimer = null;
+    let fallRaf = null;
+    const hearts = new Set();
+
+    function resetGameUI(){
+      score = 0;
+      timeLeft = 30;
+      scoreEl.textContent = "0";
+      timeEl.textContent = "30";
+      endEl.classList.remove("show");
+      endEl.textContent = "";
+      hint.style.display = "grid";
+      restartBtn.disabled = true;
+    }
+
+    function createFallingHeart(){
+      const el = document.createElement("div");
+      el.className = "heart";
+      const fw = field.clientWidth;
+      const x = Math.random() * (fw - 44) + 10;
+      el.style.left = x + "px";
+      el.style.top = "-50px";
+      const speed = 70 + Math.random()*140; // px/s
+      el.dataset.speed = String(speed);
+      el.dataset.y = "-50";
+
+      const click = (e) => {
+        e.preventDefault();
+        if(!playing) return;
+        score += 1;
+        scoreEl.textContent = String(score);
+        el.classList.add("burst");
+        setTimeout(() => removeHeart(el), 160);
+      };
+      el.addEventListener("click", click, {passive:false});
+      el.addEventListener("touchstart", click, {passive:false});
+
+      field.appendChild(el);
+      hearts.add(el);
+      return el;
+    }
+
+    function removeHeart(el){
+      if(hearts.has(el)){
+        hearts.delete(el);
+        el.remove();
+      }
+    }
+
+    function clearHearts(){
+      hearts.forEach(el => el.remove());
+      hearts.clear();
+    }
+
+    function startGame(){
+      if(playing) return;
+      playing = true;
+      resetGameUI();
+      hint.style.display = "none";
+      startBtn.disabled = true;
+      restartBtn.disabled = true;
+
+      // spawn loop
+      const spawnEvery = reduceMotion ? 850 : 520;
+      spawnTimer = setInterval(() => {
+        if(!playing) return;
+        // cap amount on screen
+        if(hearts.size < (reduceMotion ? 6 : 10)) createFallingHeart();
+      }, spawnEvery);
+
+      // countdown timer
+      gameTimer = setInterval(() => {
+        if(!playing) return;
+        timeLeft -= 1;
+        timeEl.textContent = String(timeLeft);
+        if(timeLeft <= 0){
+          endGame();
+        }
+      }, 1000);
+
+      // falling animation
+      let last = performance.now();
+      const step = (now) => {
+        if(!playing) return;
+        const dt = (now - last) / 1000;
+        last = now;
+
+        const fh = field.clientHeight;
+
+        hearts.forEach(el => {
+          const y = parseFloat(el.dataset.y || "0") + parseFloat(el.dataset.speed || "120") * dt;
+          el.dataset.y = String(y);
+          el.style.top = y + "px";
+
+          if(y > fh + 60){
+            removeHeart(el);
+          }
+        });
+
+        fallRaf = requestAnimationFrame(step);
+      };
+      fallRaf = requestAnimationFrame(step);
+    }
+
+    function endGame(){
+      if(!playing) return;
+      playing = false;
+
+      clearInterval(spawnTimer);
+      clearInterval(gameTimer);
+      if(fallRaf) cancelAnimationFrame(fallRaf);
+
+      // clean
+      setTimeout(clearHearts, 180);
+
+      // best
+      if(score > best){
+        best = score;
+        localStorage.setItem(BEST_KEY, String(best));
+        bestEl.textContent = String(best);
+      }
+
+      startBtn.disabled = false;
+      restartBtn.disabled = false;
+
+      const msg =
+        score >= 35 ? "Тебе пора в киберспорт 💗" :
+        score >= 22 ? "Вот это уже нихуя себе " :
+        score >= 12 ? "Да, это жестко" :
+                      "Попробуй еще раз. Ты все таки Бог инвокера";
+
+      endEl.classList.add("show");
+      endEl.innerHTML =
+        `<b>Раунд завершён!</b><br/>Ты набрала столько любви: <b>${score}</b> 💗<br/><span style="color:#6a6673">${msg}</span>`;
+    }
+
+    startBtn.addEventListener("click", startGame);
+    restartBtn.addEventListener("click", () => {
+      endEl.classList.remove("show");
+      endEl.textContent = "";
+      startGame();
+    });
+
+    // =========================
+    // Reveal on scroll
+    // =========================
+    (function initReveal(){
+      const items = $$(".reveal");
+      if(reduceMotion){
+        items.forEach(el => el.classList.add("in"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if(en.isIntersecting){
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      }, {threshold: 0.12});
+      items.forEach(el => io.observe(el));
+    })();
+
+    // =========================
+    // Extra: keep scrolling smooth if allowed
+    // =========================
+    if(!reduceMotion){
+      document.documentElement.style.scrollBehavior = "smooth";
+    }
+
+    // Handy anchors from hero
+    $("#toPhotos").addEventListener("click", () => $("#photos").scrollIntoView({behavior:"smooth"}));
+  </script>
+
+  <!--
+  =========================
+  ИНСТРУКЦИЯ
+  =========================
+  1) Создай рядом с index.html папку: assets
+  2) Положи туда 12 фото JPG с именами:
+     photo01.jpg, photo02.jpg, ... photo12.jpg
+     (путь должен быть: assets/photo01.jpg и т.д.)
+  3) Локальный запуск:
+     просто открой index.html двойным кликом в браузере.
+  4) GitHub Pages:
+     - создай репозиторий
+     - залей index.html и папку assets/
+     - включи Pages в настройках репозитория (Deploy from branch)
+  5) Как поменять тексты:
+     - Письмо: переменная fullLetter в <script>
+     - 26 причин: массив reasons в <script>
+     - 5 секретов: массив notes в <script>
+  -->
+</body>
+</html>
